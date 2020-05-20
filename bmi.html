@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<title>Summer workout and nutrition</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/*-------------start of modal images----------------*/
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*end of images*/
+.btn 
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Allerta Stencil", Sans-serif}
+.w3-bar-block .w3-bar-item {padding:20px}
+</style>
+<!-- Sidebar (hidden by default) -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+class="w3-bar-item w3-button"><i class="fa fa-home"></i> Close Menu</a>
+  <a href="#Food" onclick="nutrition1()" class="w3-bar-item w3-button"><i class='fas fa-pizza-slice'></i> Nutrition </a>
+  <a href="#About" onclick="workout1()" class="w3-bar-item w3-button"><i class='fas fa-walking'></i> Workout</a>
+</nav>
+<!-- Top menu -->
+<div class="w3-top  w3-black">
+
+  <div class=" w3-black w3-center w3-allerta w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
+    <div class="w3-button w3-padding-16 w3-right" onclick="main()"><i class="fa fa-home"> Home</i></div>
+    <div class="w3-button w3-xlarge w3-right w3-padding-16 "onclick=bmr()>BMR</div>
+    <div class="w3-display-middle w3-padding-16"><i class="fas fa-calculator"></i>  BMI CALCULATOR </div>
+    
+  </div>
+</div>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+  
+  <hr id="about">
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32 w3-center"> 
+  <img src="bmi.jpg" alt="bmr1" style="width:40%;"> 
+  <hr>
+    <h3><b>Enter details to calculate BMI</b></h3><br>
+
+    <div class="w3-padding-32">
+    <table>
+    <tr>
+    <td>
+  <p class="w3-text-blue">Enter age:</p></td>
+   <td> <input type="text" id="age" value=""></td>
+   <td>
+   <p class="w3-text-blue">Enter weight in kg:</p></td>
+   <td> <input type="text" id="weight" value=""></td>
+  <td> <p class="w3-text-blue">Enter height in cm:</p></td>
+   <td> <input type="text" id="height" value=""></td>
+   <br>
+   <td>
+   <button class="w3-btn w3-blue" onclick="calculate()">submit</button>
+   </td>
+  
+   
+   </tr>
+    
+    </table>
+    <!--demo container result will be here-->
+    <div class="w3-container">
+  <div class="w3-panel w3-pale-green">
+   <b><p id="demo"> </p></b>
+  </div>
+</div>
+    </div>
+  </div>
+  <hr>
+  <hr>
+  <hr>
+
+   <!-- Footer -->
+  <footer class="w3-row-padding w3-padding-32 w3-center">
+  <h2 style="text-align:center">Best whey protein in budget</h2>
+  <!--side to side images above footer-->
+<div class="row">
+  <div class="column">
+  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.in%2FNutrition-Protein-Isolate-Designed-Supplementation%2Fdp%2FB07NSS562D&psig=AOvVaw0TnJ9gGV-RvKuWpF-tBMdU&ust=1589904521691000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMj-8ofnvekCFQAAAAAdAAAAABAD">
+    <img src="asitis.jpg" alt="asitis" height="250" width="200"></a>
+  </div>
+  
+  <div class="column">
+  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com%2FMyprotein-Isolate-Protein-Chocolate-Servings%2Fdp%2FB00CHJ45FI&psig=AOvVaw3cINQMH5J9enAIBoOkOV3T&ust=1589904410891000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJiS-qDnvekCFQAAAAAdAAAAABAG">
+    <img src="impactwhey.jpg" alt="impact" height="250" width="250"></a>
+    
+  </div>
+  
+  <div class="column">
+  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.in%2FMuscleBlaze-Fuel-Whey-Protein-Chocolate%2Fdp%2FB0833452R5&psig=AOvVaw1JLNnN9pq0BzVc79R7riHI&ust=1589904637737000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCKDt9LvmvekCFQAAAAAdAAAAABAE">
+    <img src="fuelone.jpg" alt="fuelone" height="250" width="250"></a>
+  </div>
+</div>
+<hr>
+<hr>
+<hr>
+    <div class="w3-center">
+      <p>Designed by by <a href="http://dominator.eu5.org" target="_blank">dominator.eu5.org</a></p>
+    </div>
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+function workout1() {
+  window.open("workout.html","_self");
+}
+function nutrition1(){
+  window.open("nutrition.html","_self")
+}
+function calculate(){
+    var weight = document.getElementById("weight").value;
+var height = document.getElementById("height").value;
+var m,result,r;
+m=height/100;
+result=weight/(m*m)
+
+if(result>=18.5 && result<=25){
+document.getElementById("demo").innerHTML = "YOUR BMI IS: "+result+" (Normal) ";
+}
+else if (result<18.5){
+    document.getElementById("demo").innerHTML = "YOUR BMI IS: "+result+" (underweight) ";
+}
+else if(result>25){
+    document.getElementById("demo").innerHTML = "YOUR BMI IS: "+result+" (overweight) ";
+}
+else 
+document.getElementById("demo").innerHTML="wrond input"+result;
+}
+function main(){
+window.open("Index.html","_self")
+}
+function bmr(){
+     window.open("bmr.html","_self")
+}
+
+</script>
+    
+</html>
